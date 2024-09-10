@@ -1,0 +1,304 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.app-container {
+  width: 1080px;
+  max-height: 100vh; /* Limit height to viewport height */
+  margin: 0 auto;
+  background-color: #f0f8ff;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.weather-app {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+  box-sizing: border-box;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.current-weather {
+  background-color: #4682b4;
+  color: white;
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.weather-icon-large {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  width: 160px;
+}
+
+.weather-icon-large svg {
+  font-size: 100px; /* Reduced from 120px */
+  color: #FFD700;
+  margin-bottom: 10px;
+}
+
+.weather-info {
+  flex-grow: 1;
+}
+
+.location-info {
+  text-align: center;
+  width: 100%; /* Ensure it takes full width of the parent */
+}
+
+.location-info h2 {
+  font-size: 20px; /* Reduced from 24px */
+  margin: 0;
+  font-weight: bold;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for very long names */
+}
+
+.location-info p {
+  font-size: 16px; /* Reduced from 20px */
+  margin: 5px 0 0;  /* Reduced top margin for tighter spacing */
+}
+
+.temperature-info {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.temperature-info h1 {
+  font-size: 72px; /* Reduced from 96px */
+  margin: 0;
+  font-weight: normal;
+  margin-right: 20px;
+  line-height: 1; /* Add this to remove extra space above/below the number */
+}
+
+.hi-low {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Change this from center to flex-start */
+  margin-top: -0.1em; /* Use a small negative margin to adjust alignment */
+}
+
+.hi-low p {
+  font-size: 18px; /* Reduced from 24px */
+  margin: 0;
+  white-space: nowrap; /* Prevent wrapping */
+  line-height: 1.2; /* Adjust line height for tighter spacing */
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.details p {
+  font-size: 16px;
+  margin: 0;
+  white-space: nowrap; /* Prevent wrapping */
+  line-height: 1.4; /* Add some space between lines */
+}
+
+.hourly-forecast-widget {
+  background-color: white;
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hourly-forecast-widget h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.hourly-forecast-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hourly-forecast-container::-webkit-scrollbar {
+  display: none;
+}
+
+.hourly-forecast {
+  display: inline-flex;
+  font-size: 14px;
+  width: max-content;
+}
+
+.hourly-item {
+  text-align: center;
+  margin-right: 20px;
+  min-width: 60px;
+  flex-shrink: 0;
+  padding: 0 10px; /* Add some horizontal padding */
+}
+
+.hourly-item:last-child {
+  margin-right: 0;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hourly-forecast-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hourly-forecast-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 10px; /* Add some padding to show the scrollbar */
+}
+
+.ten-day-forecast {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px; /* Add this line */
+  width: 60%;
+}
+
+.forecast-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2px 0; /* Reduced from 5px to 2px */
+}
+
+.air-quality, .sunset {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px; /* Add this line */
+}
+
+.quality-meter {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.meter-bar {
+  width: 10%;
+  height: 100%;
+  background-color: green;
+}
+
+.side-info {
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+}
+
+.radar, .air-quality, .sunset {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.additional-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.ten-day-forecast, .radar, .air-quality, .sunset {
+  background-color: white;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.ten-day-forecast {
+  width: 60%;
+}
+
+.side-info {
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+}
+
+.radar, .air-quality, .sunset {
+  flex: 1;
+}
+
+.ten-day-forecast h3, .radar h3, .air-quality h3, .sunset h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+@media (max-width: 1080px) {
+  .app-container {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .weather-app {
+    padding: 20px;
+  }
+
+  /* Add more adjustments for smaller screens as needed */
+}
+
+/* Style for the sunny icon */
+.weather-icon-large svg {
+  color: #FFD700;  /* Golden yellow color for the sun */
+}
+
+/* Style for the icons in the hourly forecast */
+.hourly-item svg {
+  color: #4682B4;  /* Steel blue color */
+}
+
+/* Style for the icons in the 10-day forecast */
+.forecast-item svg {
+  color: #20B2AA;  /* Light sea green color */
+}
+
+/* Style for the sunset icon */
+.sunset-icon {
+  color: #FF6347;  /* Tomato red color */
+}
+
+.radar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.radar-icon {
+  font-size: 48px;
+  color: #4682B4;  /* Steel blue color, you can change this */
+}
